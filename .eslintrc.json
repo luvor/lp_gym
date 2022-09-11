@@ -1,0 +1,8 @@
+{
+  "extends": ["@nuxtjs/eslint-config-typescript", "plugin:nuxt/recommended", "plugin:prettier/recommended"],
+  "rules": {
+    "vue/multi-word-component-names": 0,
+    "vue/script-setup-uses-vars": "error",
+    "linebreak-style": 0
+  }
+}
