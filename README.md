@@ -1,5 +1,10 @@
 # Nuxt 3 Minimal Starter
 
+- pinia
+- unocss
+- layouts
+- fonts via font-face
+
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
 ## Setup
