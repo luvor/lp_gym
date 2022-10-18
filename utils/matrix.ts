@@ -1,7 +1,8 @@
-export const returnSquareMatrixSum = (matrix: number[][]) => {
-  const nMatrix = matrix.length
+export const returnMatrixSum = (matrix: number[][]) => {
+  const mMatrix = matrix.length
+  const nMatrix = matrix[0].length
   let sum = 0
-  for (let i = 0; i < nMatrix; i++) {
+  for (let i = 0; i < mMatrix; i++) {
     for (let j = 0; j < nMatrix; j++) {
       sum += matrix[i][j]
     }

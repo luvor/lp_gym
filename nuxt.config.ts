@@ -14,11 +14,19 @@ export default defineNuxtConfig({
     shortcuts: [],
     rules: []
   },
-  css: ['~~/assets/css/style.css'],
+  css: [
+    '~~/assets/css/style.css',
+    'primevue/resources/themes/saga-blue/theme.css',
+    'primevue/resources/primevue.css',
+    'primeicons/primeicons.css'
+  ],
   typescript: {
     strict: true
   },
   vite: {
     plugins: [eslintPlugin()]
+  },
+  build: {
+    transpile: ['primevue']
   }
 })
