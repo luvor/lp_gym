@@ -3,6 +3,7 @@
   "rules": {
     "vue/multi-word-component-names": 0,
     "vue/script-setup-uses-vars": "error",
-    "linebreak-style": 0
+    "linebreak-style": 0,
+    "endOfLine": "auto"
   }
 }
