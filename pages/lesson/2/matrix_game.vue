@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { useToast } from 'primevue/usetoast'
 
 import { MatrixMethods } from '~~/enums'
-import { returnMatrixSum } from '~~/utils/matrix'
+import { hurwitz, laplaceRisks, laplaceWin, maximax, maximin, returnMatrixSum, savageRisks } from '~~/utils/matrix'
 
 const toast = useToast()
 
@@ -11,6 +11,7 @@ const matrixArray = Array.from(new Array(100), () => new Array(100).fill(0))
 
 const nMatrix = ref(0)
 const mMatrix = ref(0)
+const hurwitzAlpha = ref(0.7)
 
 const matrix = ref(matrixArray)
 
@@ -58,12 +59,24 @@ const giveSolution = () => {
 
   const finalMat = matrix.value.slice(0, mMatrix.value).map((item) => item.slice(0, nMatrix.value))
 
-  // console.log(finalMat)
+  console.log(finalMat)
 
   let answer = null
 
   if (method.value === MatrixMethods.sum) {
     answer = returnMatrixSum(finalMat)
+  } else if (method.value === MatrixMethods.hurwitz) {
+    answer = hurwitz(finalMat, hurwitzAlpha.value)
+  } else if (method.value === MatrixMethods.savage) {
+    answer = savageRisks(finalMat)
+  } else if (method.value === MatrixMethods.waldMaxMax) {
+    answer = maximax(finalMat)
+  } else if (method.value === MatrixMethods.waldMaxMin) {
+    answer = maximin(finalMat)
+  } else if (method.value === MatrixMethods.laplaceRisks) {
+    answer = laplaceRisks(finalMat)
+  } else if (method.value === MatrixMethods.laplaceWin) {
+    answer = laplaceWin(finalMat)
   }
 
   if (answer) {
@@ -135,7 +148,26 @@ const clearMatrix = () => {
           <option value="">Выберите метод</option>
           <option value="sum">Сумма</option>
           <option value="savage">Критерий Сэвиджа</option>
+          <option value="hurwitz">Критерий Гурвица</option>
+          <option value="waldMaxMax">Критерий Вальда (максимакс)</option>
+          <option value="waldMaxMin">Критерий Вальда (максимин)</option>
+          <option value="laplaceRisks">Критерий Лапласа относительно рисков</option>
+          <option value="laplaceWin">Критерий Лапласа относительно выигрышей</option>
         </select>
+      </section>
+
+      <section v-if="method === 'hurwitz'">
+        <div class="my-4 flex items-center justify-center rounded-md bg-white p-4">
+          <h2 class="mr-4">Введите альфа:</h2>
+          <input
+            v-model="hurwitzAlpha"
+            type="number"
+            max="99"
+            maxlength="2"
+            pattern="[0-9.]+"
+            class="hidden-arrows w-[60px] appearance-none rounded-md border-none bg-gray-100 p-1 text-center text-lg"
+          />
+        </div>
       </section>
 
       <section

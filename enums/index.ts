@@ -6,8 +6,10 @@ export enum MatrixMethods {
   'min' = 'min',
   'max' = 'max',
   'savage' = 'savage',
-  'laplace' = 'laplace',
-  'gurvits' = 'gurvits',
-  'wald' = 'wald',
+  'laplaceRisks' = 'laplaceRisks',
+  'laplaceWin' = 'laplaceWin',
+  'hurwitz' = 'hurwitz',
+  'waldMaxMax' = 'waldMaxMax',
+  'waldMaxMin' = 'waldMaxMin',
   'optimistic optimism' = 'optimistic optimism'
 }

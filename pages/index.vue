@@ -11,7 +11,13 @@
         <h2>Занятие 2</h2>
         <ul class="list-circle ml-4 flex flex-col">
           <li>
-            <nuxt-link to="/lesson/2/savage">Критерий Сэвиджа</nuxt-link>
+            <nuxt-link to="/lesson/2/matrix_game">Матричная игра</nuxt-link>
+          </li>
+        </ul>
+        <h2>Занятие 4</h2>
+        <ul class="list-circle ml-4 flex flex-col">
+          <li>
+            <nuxt-link to="/lesson/4/smo">Калькулятор СМО</nuxt-link>
           </li>
         </ul>
       </section>
