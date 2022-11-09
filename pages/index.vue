@@ -20,6 +20,12 @@
             <nuxt-link to="/lesson/4/smo">Калькулятор СМО</nuxt-link>
           </li>
         </ul>
+        <h2>Занятие 9</h2>
+        <ul class="list-circle ml-4 flex flex-col">
+          <li>
+            <nuxt-link to="/lesson/9/zapasy">Модели управления запасами</nuxt-link>
+          </li>
+        </ul>
       </section>
       <!-- <p>Count: {{ store.count }}</p>
       <p>Double count: {{ store.doubleCount }}</p>

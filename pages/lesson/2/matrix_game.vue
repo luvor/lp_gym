@@ -38,7 +38,7 @@ watch(
 const giveSolution = () => {
   isProcessing.value = true
 
-  console.log('method', method.value)
+  // console.log('method', method.value)
 
   if (!method.value) {
     toast.add({ severity: 'error', summary: 'Error', detail: 'Выберите метод', life: 3000 })
@@ -59,7 +59,7 @@ const giveSolution = () => {
 
   const finalMat = matrix.value.slice(0, mMatrix.value).map((item) => item.slice(0, nMatrix.value))
 
-  console.log(finalMat)
+  // console.log(finalMat)
 
   let answer = null
 

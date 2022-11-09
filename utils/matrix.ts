@@ -81,7 +81,7 @@ export function savageRisks(matrix: number[][]) {
       minIndex = i
     }
   }
-  console.log({ index: minIndex, strategies: matrix[minIndex] })
+  // console.log({ index: minIndex, strategies: matrix[minIndex] })
   return { index: minIndex, strategies: matrix[minIndex] }
 }
 

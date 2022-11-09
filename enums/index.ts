@@ -13,3 +13,9 @@ export enum MatrixMethods {
   'waldMaxMin' = 'waldMaxMin',
   'optimistic optimism' = 'optimistic optimism'
 }
+
+export enum ReserveManagementMethods {
+  'willson' = 'willson',
+  'economic' = 'economic',
+  'withSales' = 'withSales'
+}
